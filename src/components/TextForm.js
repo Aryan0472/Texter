@@ -55,21 +55,21 @@ export default function TextForm(props) {
     const [text, setText] = useState("Enter text");
     return (
        <>
-       <div className="container" style = {{color : props.mode==='light'?'#202e60':'white'}}>
+       <div className="container" style = {{color : props.mode==='light'?'rgb(24 46 127)':'white'}}>
         <div className="mb-4">
              <label htmlFor="myBox" className="form-label"> <h2><u>{props.heading}</u></h2></label>
-             <textarea className="form-control" value = {text} style = {{background : props.mode==='light'?'white':'grey'}} onChange = {handleOnchange} id="myBox" rows="8"></textarea>
+             <textarea className="form-control" value = {text} style = {{background : props.mode==='light'?'white':'#2949be'}} onChange = {handleOnchange} id="myBox" rows="8"></textarea>
         </div>
 
-        <button className ="btn btn-info mx-2" onClick={handleUpClick}>
+        <button className ="btn btn-info mx-2 my-1" onClick={handleUpClick}>
            <h5> Convert to UPPER CASE</h5>
         </button>
 
-        <button className ="btn btn-info mx-2" onClick={handleLowClick}>
+        <button className ="btn btn-info mx-2 my-1" onClick={handleLowClick}>
            <h5> Convert to lower case</h5>
         </button>
 
-        <button className ="btn btn-info mx-2" onClick={handleTitlecase}>
+        <button className ="btn btn-info mx-2 my-1" onClick={handleTitlecase}>
            <h5> Convert to Title case</h5>
         </button>
 
@@ -77,18 +77,18 @@ export default function TextForm(props) {
            <h5> Convert to Title case faw</h5>
         </button> */}
 
-        <button className ="btn btn-info mx-2" onClick={handleClearText}>
+        <button className ="btn btn-info mx-2 my-1" onClick={handleClearText}>
            <h5> Clear Text</h5>
         </button>
 
-        <button className ="btn btn-info mx-2" onClick={handleCopyText}>
+        <button className ="btn btn-info mx-2 my-1" onClick={handleCopyText}>
            <h5>Copy Text</h5>
         </button>
 
         </div>
         <div className="container my-3" style = {{color : props.mode==='light'?'#202e60':'white'}}>
             <h3>Your Text Summary</h3>
-            <h5>{text.split(" ").length} Words</h5>
+            <h5>{text.split(" ").filter((element)=>{return element.length !== 0}).length} Words</h5>
             <h5>{text.length} Characters</h5>
 
         </div>
