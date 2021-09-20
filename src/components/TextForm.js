@@ -61,15 +61,15 @@ export default function TextForm(props) {
              <textarea className="form-control" value = {text} style = {{background : props.mode==='light'?'white':'#2949be'}} onChange = {handleOnchange} id="myBox" rows="8"></textarea>
         </div>
 
-        <button className ="btn btn-info mx-2 my-1" onClick={handleUpClick}>
+        <button  disabled= {text.length === 0} className ="btn btn-info mx-2 my-1" onClick={handleUpClick}>
            <h5> Convert to UPPER CASE</h5>
         </button>
 
-        <button className ="btn btn-info mx-2 my-1" onClick={handleLowClick}>
+        <button disabled= {text.length === 0} className ="btn btn-info mx-2 my-1" onClick={handleLowClick}>
            <h5> Convert to lower case</h5>
         </button>
 
-        <button className ="btn btn-info mx-2 my-1" onClick={handleTitlecase}>
+        <button disabled= {text.length === 0} className ="btn btn-info mx-2 my-1" onClick={handleTitlecase}>
            <h5> Convert to Title case</h5>
         </button>
 
@@ -77,11 +77,11 @@ export default function TextForm(props) {
            <h5> Convert to Title case faw</h5>
         </button> */}
 
-        <button className ="btn btn-info mx-2 my-1" onClick={handleClearText}>
+        <button disabled= {text.length === 0} className ="btn btn-info mx-2 my-1" onClick={handleClearText}>
            <h5> Clear Text</h5>
         </button>
 
-        <button className ="btn btn-info mx-2 my-1" onClick={handleCopyText}>
+        <button disabled= {text.length === 0} className ="btn btn-info mx-2 my-1" onClick={handleCopyText}>
            <h5>Copy Text</h5>
         </button>
 
